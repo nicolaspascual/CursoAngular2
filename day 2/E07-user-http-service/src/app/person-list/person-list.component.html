@@ -1,0 +1,22 @@
+
+
+<table>
+  <thead>
+    <td>Name</td>
+    <td>Surname</td>
+    <td>Email</td>
+    <td>Phone</td>
+    <td>Img</td>
+  </thead>
+  <tbody>
+    <tr *ngFor='let person of people '>
+      <td>{{person.first_name}}</td>
+      <td>{{person.last_name}}</td>
+      <td>{{person.email}}</td>
+      <td>{{person.phone}}</td>
+      <td><img src='{{person.img_url}}'/></td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click) = "refresh()">Refresh</button>

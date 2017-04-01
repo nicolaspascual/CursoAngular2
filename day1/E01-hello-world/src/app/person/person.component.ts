@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-person',
@@ -6,12 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
-  name = "Nicolas"
-  surnames = "Pascual Gonzalez"
+  @Input() name = "No Funciona"
+  @Input() surnames = "No Funciona"
+  @Output() mouseOver = new EventEmitter<number>();
+  counter = 0;
 
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  mouseOverEvent(){   
+    console.log(`
+      Firing mouse over
+    `);
+    this.mouseOver.emit(this.counter);
+    this.counter++;
     
   }
 

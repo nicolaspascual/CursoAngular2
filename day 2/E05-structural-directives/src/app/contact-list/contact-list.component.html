@@ -1,0 +1,33 @@
+<button (click) = 'togleHiddenList()'> Mostrar / Ocular Agenda </button>
+
+<h1>
+  Ver / Eliminar contactos existentes
+</h1>
+<table [ngStyle] = '{visibility: isHidden}' >
+  <thead>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Teléfono</th>
+    <th>Eliminar</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts_service.contacts">
+      <td>{{contact.name}}</td>
+      <td>{{contact.surname}}</td>
+      <td>{{contact.phoneNumber}}</td>
+      <td><button (click) = "deleteUser(contact.phoneNumber)">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+<hr/>
+<br/>
+<input [(ngModel)]="toEditPhone"  placeholder="Telf"/>
+<button (click) = 'deleteUser(toEditPhone)' >Buscar y Eliminar Contacto</button>
+<br/>
+<h1>
+  Añadir Contacto
+</h1>
+<input [(ngModel)]="toAddName" placeholder="Nombre"/>
+<input [(ngModel)]="toAddSurnames"  placeholder="Apellidos"/>
+<input [(ngModel)]="toAddPhone"  placeholder="Telf"/>
+<button (click) = 'addUser()' >Añadir Contacto</button>

@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
-  name = 'Nicolas';
-  surnames = 'Pascual Gonzalez'
-  
-
-  mouseOverEventFather(counter: number){
-    console.log(
-      `Name: ${this.name}.
-Surnames: ${this.surnames}.
-Counter: ${counter}`);
-  }
 }
