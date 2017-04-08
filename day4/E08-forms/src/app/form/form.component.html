@@ -1,0 +1,15 @@
+<form #form="ngForm">
+  <input #firstNameInput="ngModel" [(ngModel)]="firstName" name="firstName" type="text" placeholder="Name" required>
+  <small [hidden]="firstNameInput.valid">{{firstNameInput.errors}}</small><br/>
+
+  <input #lastNameInput="ngModel" [(ngModel)]="lastName" name="lastName" type="text" placeholder="Last Name" required>
+  <small [hidden]="lastNameInput.valid">{{lastNameInput.errors}}</small><br/>
+
+  <input type="email" #emailInput="ngModel" placeholder="Email" name="email" [(ngModel)]="email" required/>
+  <small [hidden]="emailInput.valid">{{emailInput.errors}}</small><br/>
+
+  <input pattern="[0-9]{9.9}" #telephoneInput="ngModel" placeholder="Telephone" name="telephone" [(ngModel)]="telephone"/>
+  <small [hidden]="telephoneInput.valid">{{telephoneInput.errors}}</small><br/>
+
+  <button type="submit" [disabled]="form.invalid" (click)="console.log(firstName + ' ' + lastName + ' ' + email + ' ' + telephone +'.')">Submit</button>
+</form>

@@ -1,0 +1,20 @@
+<div id="container" *ngIf="report">
+  <div id="report-title">
+    <p>@{{report.user}}: </p>
+    <a target="_blank" href={{report.link}}>{{report.title}}</a>
+  </div>
+
+<div id="report-date"> 
+  <p>{{report.date | date: 'short'}}</p>
+</div>
+
+<div id="report-commentsN">
+    <label>Comments</label>
+    <p>{{report.commentsN}}</p>
+</div>
+<div id="report-pointsN">
+    <label>Points</label>
+    <p>{{report.pointsN}}</p>
+</div>
+  
+</div>

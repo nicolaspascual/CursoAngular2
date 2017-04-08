@@ -1,0 +1,5 @@
+<div id="container">
+  <div class="report" *ngFor="let report of  reports | sort: sortField ">
+    <app-report [report]="report"></app-report>
+  </div>  
+</div>

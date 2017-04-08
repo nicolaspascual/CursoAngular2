@@ -1,0 +1,18 @@
+#container{
+    border: 1px solid black;
+}
+
+#user-img{
+    float: left;
+}
+
+#user-tweetsN{
+    float: left;
+    margin-left: 10px;
+}
+
+#user-followersN{
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}

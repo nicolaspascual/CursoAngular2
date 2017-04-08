@@ -1,0 +1,16 @@
+app-filter{
+    clear: both;
+}
+
+app-user{
+    float: left;
+    width: 20%;
+}
+app-report-list{
+    float: left;
+    width: 60%;
+}
+app-sort{
+    width: 20%;
+}
+

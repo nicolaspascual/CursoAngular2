@@ -1,0 +1,16 @@
+#container{
+    border: 1px solid black;
+}
+#report-title p{
+    float: left;
+}
+
+#report-title{
+    float: left;
+}
+
+#report-commentsN{
+    clear: right;
+    float:left;
+    margin: 0px 10px;
+}
