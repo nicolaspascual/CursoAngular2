@@ -1,5 +1,5 @@
 <div id="container">
-  <div class="report" *ngFor="let report of  reports | sort: sortField ">
-    <app-report [report]="report"></app-report>
+  <div class="report"  *ngFor="let report of  reports | sort: sortField | filter: filterField ">
+    <app-report [report]="report"  [reports]="reports" (reportsChange)="remove($event)"></app-report>
   </div>  
 </div>

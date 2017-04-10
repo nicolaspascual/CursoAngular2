@@ -30,7 +30,7 @@ import { FilterSubjectService } from "app/filter-subject.service";
     FilterPipe,
     MainComponent
   ],
-  imports: [
+  imports: [  
     BrowserModule,
     FormsModule,
     HttpModule,

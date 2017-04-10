@@ -1,18 +1,25 @@
 #container{
-    border: 1px solid black;
+    
 }
 
 #user-img{
     float: left;
 }
 
-#user-tweetsN{
-    float: left;
-    margin-left: 10px;
+#constatistics-containertainer {
+    text-align: justify;
+}
+#statistics-container > div {
+    width: 100px; /* Declare your value. Can be in relative units. */
+    display: inline-block;
+    vertical-align: top;
+}
+#statistics-container:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
 }
 
-#user-followersN{
-    float: left;
-    margin-left: 10px;
-    margin-right: 10px;
+#statistics-container > div  > p{
+    margin: 0;
 }

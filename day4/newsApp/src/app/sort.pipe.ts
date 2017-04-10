@@ -7,8 +7,8 @@ import { Report } from "app/report";
 export class SortPipe implements PipeTransform {
 
   transform(value: Report[], sortField: String): Report[] {
+    console.log(value);
     if(value){
-      console.log(value);
       if(sortField == 'date')
         return value.sort(
           (a,b) => {if(a.date < b.date) return -1;

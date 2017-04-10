@@ -7,21 +7,18 @@ import { Report } from "app/report";
 export class ReportService implements OnInit {
 
    private url = 'https://node-hnapi.herokuapp.com/news?page=1';
-   public reports : Array<Report> ;
+
+   private reports: Report[];
+  
+
 
   constructor(private http: Http) {  
     http.get(this.url)
   }
 
   ngOnInit(): void {
-    this.retrieveReports().subscribe(
-      reports => this.reports = reports
-    );
   }
 
-  getReports() : Report[]{
-    return this.reports;
-  }
 
   retrieveReports() : Observable<Report[]>{
     return this.http.get(this.url)
@@ -33,16 +30,17 @@ export class ReportService implements OnInit {
     var result = []
     var id = 0;
     for(let json of res.json())
-      result.push(
-        new Report(
-          id++,          
-          json["user"],
-          json["url"],
-          json['title'],
-          json["comments_count"],
-          json["points"],
-          new Date(json["time"]*1000)
-        )
+    if(json['user'] != '' && json['url'] != '' && json['title'] != '' && json['comments_count'] != 0 && json['points'] != 0)
+        result.push(
+          new Report(
+            id++,          
+            json["user"],
+            json["url"],
+            json['title'],
+            json["comments_count"],
+            json["points"],
+            new Date(json["time"]*1000)
+          )
       );
     
     return result;

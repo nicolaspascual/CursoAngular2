@@ -15,6 +15,10 @@ export class SortComponent implements OnInit {
     this.sortSubject.subject.next('date');
    }
 
+   changeSorting(sortMethod : string){
+     this.sortSubject.subject.next(sortMethod);
+   }
+
   ngOnInit() {
   }
 

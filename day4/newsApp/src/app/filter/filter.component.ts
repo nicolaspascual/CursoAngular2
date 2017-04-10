@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterSubjectService } from "app/filter-subject.service";
 
 @Component({
   selector: 'app-filter',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilterComponent implements OnInit {
 
-  constructor() { }
+  private text_filter : string;
+
+  constructor(private filterSubject : FilterSubjectService) { }
 
   ngOnInit() {
+  }
+
+  update(){
+    this.filterSubject.subject.next(this.text_filter);
   }
 
 }

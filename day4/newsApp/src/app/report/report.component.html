@@ -1,20 +1,19 @@
-<div id="container" *ngIf="report">
-  <div id="report-title">
-    <p>@{{report.user}}: </p>
-    <a target="_blank" href={{report.link}}>{{report.title}}</a>
+
+<div class="panel panel-default" *ngIf="report" style="position:relative;">
+  <div class="panel-body">
+    <div id="heading" style="width:100%">
+      <span style="float:left;">@{{report.user}}: </span>
+      <a target="_blank" href={{report.link}}>{{report.title}}</a>
+      <span class="pull-right">{{report.date | date: 'short'}}</span>
+    </div>
+
+
+
+    <ul class="nav nav-pills" role="tablist" style="position:absolute; bottom:0; margin-bottom: 3px;">
+      <li role="presentation"><span class="badge">{{report.commentsN}}</span>Comments</li>
+      <li role="presentation"><span class="badge">{{report.pointsN}}</span>Points</li>
+    </ul>
+
+    <a (click)="delete()" class="pull-right" style="cursor: pointer;"><i class="fa fa-trash" style="color:tomato;"></i></a>
   </div>
-
-<div id="report-date"> 
-  <p>{{report.date | date: 'short'}}</p>
-</div>
-
-<div id="report-commentsN">
-    <label>Comments</label>
-    <p>{{report.commentsN}}</p>
-</div>
-<div id="report-pointsN">
-    <label>Points</label>
-    <p>{{report.pointsN}}</p>
-</div>
-  
 </div>

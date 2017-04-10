@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Report } from "app/report";
+import { ReportService } from "app/report.service";
 
 @Component({
   selector: 'app-report',
@@ -11,9 +12,18 @@ export class ReportComponent implements OnInit {
   @Input()
   private report: Report;
 
-  constructor() { }
+  @Input() private reports: Report[];
+  @Output() private reportsChange  = new  EventEmitter<Report>();
+
+  constructor(private reportService: ReportService) { }
 
   ngOnInit() {
+  }
+
+
+  delete(){
+    this.reportsChange.emit(this.report);
+
   }
 
 }
